@@ -33,11 +33,11 @@ public class DbExam4 {
 
             // output
             while (rs.next()) {
-                int product = rs.getInt("product_id");
+                int product_id = rs.getInt("product_id");
                 String name = rs.getString("product_name");
                 int price = rs.getInt("price");
 
-                System.out.println("product_id:" + product + ", name:" + name + ", price:" + price );
+                System.out.println("product_id:" + product_id + ", name:" + name + ", price:" + price );
                 //System.out.println(name);
                 //System.out.println(price);
             }
