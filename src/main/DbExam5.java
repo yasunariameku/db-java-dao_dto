@@ -13,9 +13,9 @@ public class DbExam5 {
       
     	//データベースと接続する
  
-    	//インスタンス生成
+    	//Productクラスのインスタンス生成
     	Product p = new Product(null, "ボールペン", 200);
-    	//registerメソッドを使う。
+    	//ProductDaoクラスのインスタンスを作成して、そのインスタンスのregisterメソッドを使う。
     	new ProductDao(DbUtil.getConnection()).register(p);
     	
     
@@ -24,12 +24,12 @@ public class DbExam5 {
         
        
     	//データベースと接続する
-		//インスタンスを作る
+		//ProductDaoクラスのインスタンスを作る
+    	//→作ったインスタンスをリストに入れる
+    	//→テーブルから全件取得するfindメソッドを使う。
 		List<Product> list = new ProductDao(DbUtil.getConnection()).findAll();
     	
-    	//テーブルから全件取得する。findメソッドを使う。
-    	
-    	
+    	//拡張for文でとってきた値を出力
     	for (Product i : list) {
     		System.out.println("product_id:" + i.getProduct_id() + ", " + "Product_name:" + i.getProduct_name() + ", " + "price:" + i.getPrice() );
     	}
